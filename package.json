@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
+    "start":"nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -34,7 +35,8 @@
     "md5": "^2.3.0",
     "mongoose": "^6.2.4",
     "passport": "^0.5.2",
-    "passport-github2": "^0.1.12"
+    "passport-github2": "^0.1.12",
+    "nodemon": "^2.0.15"
   },
   "devDependencies": {
     "eslint": "^8.10.0",
