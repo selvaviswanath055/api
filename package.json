@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
+  "engines":{
+    "node": "16.14.0"
+  },
   "scripts": {
     "dev": "nodemon src/index.js",
     "start":"nodemon src/index.js",
