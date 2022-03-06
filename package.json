@@ -18,11 +18,31 @@
   },
   "homepage": "https://github.com/selvaviswanath055/api#readme",
   "dependencies": {
-    "eslint": "^8.10.0",
+    "apollo-server-express": "^3.6.3",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "prettier": "^2.5.1"
+    "express-session": "^1.17.2",
+    "graphql": "^16.3.0",
+    "graphql-depth-limit": "^1.1.0",
+    "graphql-iso-date": "^3.6.1",
+    "graphql-validation-complexity": "^0.4.2",
+    "helmet": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "marked": "^4.0.12",
+    "md5": "^2.3.0",
+    "mongoose": "^6.2.4",
+    "passport": "^0.5.2",
+    "passport-github2": "^0.1.12"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "faker": "^6.6.6",
+    "node-fetch": "^3.2.1",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
   }
 }
