@@ -16,6 +16,10 @@ const UserSchema = new mongoose.Schema(
       required: true,
       index: { unique: true },
     },
+    Bio: {
+      type: String,
+      default: "",
+    },
     designation: {
       type: String,
       required: true,

@@ -17,8 +17,7 @@ const port = process.env.PORT || 4000;
 const DB_HOST = process.env.DB_HOST;
 db.connect(DB_HOST);
 
-app.use(helmet());
-// CORS middleware
+//app.use(helmet());
 app.use(cors());
 
 const getUser = (token) => {

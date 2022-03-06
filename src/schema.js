@@ -42,7 +42,13 @@ module.exports = gql`
     updateBlog(id: ID!, content: String!): Blog!
     deleteBlog(id: ID!): Boolean!
     toggleFavorite(id: ID!): Blog!
-    signUp(username: String!, email: String!, password: String!): String!
+    signUp(
+      designation: String!
+      name: String!
+      username: String!
+      email: String!
+      password: String!
+    ): String!
     signIn(username: String, email: String, password: String!): String!
   }
 `;

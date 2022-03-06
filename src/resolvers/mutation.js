@@ -112,7 +112,11 @@ module.exports = {
       );
     }
   },
-  signUp: async (parent, { name, username, email, password }, { models }) => {
+  signUp: async (
+    parent,
+    { designation, name, username, email, password },
+    { models }
+  ) => {
     // normalize email address
     email = email.trim().toLowerCase();
     // hash the password
@@ -123,6 +127,7 @@ module.exports = {
       const user = await models.User.create({
         name,
         username,
+        designation,
         email,
         avatar,
         password: hashed,
