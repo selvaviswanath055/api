@@ -16,6 +16,7 @@ module.exports = {
     }
 
     return await models.Blog.create({
+      title: args.title,
       content: args.content,
       author: mongoose.Types.ObjectId(user.id),
       favoriteCount: 0,
