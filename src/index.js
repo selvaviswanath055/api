@@ -31,23 +31,26 @@ const getUser = (token) => {
     }
   }
 };
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  validationRules: [depthLimit(5), createComplexityLimitRule(1000)],
-  context: async ({ req }) => {
-    const token = req.headers.authorization;
-    const user = await getUser(token);
-    return { models, user };
-  },
-});
+async function startApolloServer(typeDefs, resolvers) {
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    validationRules: [depthLimit(5), createComplexityLimitRule(1000)],
+    context: async ({ req }) => {
+      const token = req.headers.authorization;
+      const user = getUser(token);
+      return { models, user };
+    },
+  });
+  await server.start();
 
-server.start();
+  server.applyMiddleware({ app, path: "/api" });
 
-server.applyMiddleware({ app, path: "/api" });
+  app.listen(port, () =>
+    console.log(
+      `GraphQL Server running at http://localhost:${port}${server.graphqlPath}`
+    )
+  );
+}
 
-app.listen(port, () =>
-  console.log(
-    `GraphQL Server running at http://localhost:${port}${server.graphqlPath}`
-  )
-);
+startApolloServer(typeDefs, resolvers);
