@@ -44,7 +44,7 @@ async function startApolloServer(typeDefs, resolvers) {
   });
   await server.start();
 
-  server.applyMiddleware({ app, path: "/api" });
+  server.applyMiddleware({ app, path: "/" });
 
   app.listen(port, () =>
     console.log(
