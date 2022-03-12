@@ -37,11 +37,12 @@ const server = new ApolloServer({
   validationRules: [depthLimit(5), createComplexityLimitRule(1000)],
   context: async ({ req }) => {
     const token = req.headers.authorization;
-    const user = getUser(token);
+    const user = await getUser(token);
     return { models, user };
   },
 });
-await server.start();
+
+server.start();
 
 server.applyMiddleware({ app, path: "/api" });
 
