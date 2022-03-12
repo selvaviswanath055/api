@@ -67,17 +67,13 @@ module.exports = {
     );
   },
   toggleFavorite: async (parent, { id }, { models, user }) => {
-    // if no user context is passed, throw auth error
     if (!user) {
       throw new AuthenticationError();
     }
 
-    // check to see if the user has already favorited the blog
     let blogCheck = await models.Blog.findById(id);
     const hasUser = blogCheck.favoritedBy.indexOf(user.id);
 
-    // if the user exists in the list
-    // pull them from the list and reduce the favoriteCount by 1
     if (hasUser >= 0) {
       return await models.Blog.findByIdAndUpdate(
         id,

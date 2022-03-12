@@ -38,7 +38,7 @@ module.exports = gql`
     blogFeed(cursor: String): Feed
   }
   type Mutation {
-    newBlog(content: String!): Blog
+    newBlog(title: String!, content: String!): Blog
     updateBlog(id: ID!, content: String!): Blog!
     deleteBlog(id: ID!): Boolean!
     toggleFavorite(id: ID!): Blog!
